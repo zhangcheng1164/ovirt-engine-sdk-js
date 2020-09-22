@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- '12'
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+script:
+- npm run test
+- npx codecov
+deploy:
+  provider: npm
+  email: zhangcheng1164@gmail.com
+  api_key:
+    secure: f5yf41dyeBsLncwVlty2g30D1AgzFvsry3N4qoqqo2CQjjjioAC7zmi50Yi5Z9NtXgnafBg43RK52sxRcHjvdrO9nd8ASR0oM3PiB5eqmOetqwU+6ElN111PK884o+16M3BtzrX/eJa0CO1Ba8r7WTuog+tJp/C0PQMF1ENiX60Lu2HE5fHudtQ+prtYNW0B1nr7NKF7W+ZLKakfwN+CszzK743yMoaDeGdC5Yeib/R3igw9M6gf+wlmcu+kuN7G/ZBbsxcBkHUa7wrKtssITucrUjWXVZbj+nNSfLqL9gVEcB0awg6GyUVsEXcq/D7oTYSAaRyjNLZ4ShUOuwSzroSTJUG5iE2vwiWM6JiU7KTkAwjkT8Tqj94MmxTAOggB5ooiKdz+/guVuD0gfof5dbyVSjJBEM5qjlhF8pWVp+l3sWAEPE3HsHahsZKpnvRNtorz6QP5dnqP4XnFLOpRZMVw+eC4YTT46swO47Yi87OVjqQkokvkyxnKtXdiJ0Z0qym7Lp0fNHcfjG26JdvtArJsL6iQO7WyRyz3QjlylJ0l02I1cJIJAhenWL1maiNXKBplk3AoVZbdQcz9Hz/2SVY9oHj/C67nhTqeJnxpng141VC18edk9kErnWK3QoQss5qv52gTZF/lNSsUXNq/VJX6gTvPRgYZhTBKLLEf124=
+  on:
+    tags: true
+    repo: zhangcheng1164/ovirt-engine-sdk-js
+  skip_cleanup: 'true'
